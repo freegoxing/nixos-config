@@ -1,0 +1,51 @@
+{ config, pkgs, ...}:
+
+{
+  home.username = "kvm";
+  home.homeDirectory = "/home/kvm";
+
+  home.stateVersion = "26.05";
+
+  home.packages = with pkgs;[
+    fastfetch
+    which
+    eza
+    nix-output-monitor
+  ];
+
+  programs.home-manager.enable = true;
+
+  programs.git = {
+    enable = true;
+    userName = "free";
+    userEmail = "mpdf2023@outlook.com";
+    
+    settings = {
+      init.defaultBranch = "master";
+    }
+  };
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = [
+        "git"
+        "sudo"
+      ];
+
+      theme = "robbyrussell";
+    };
+
+    shellAliases = {
+      ll = "ls -lah";
+      rebuild = "sudo nixos-rebuild switch";
+      q = "exit";
+    };
+  };
+}
