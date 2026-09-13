@@ -1,4 +1,5 @@
 { ... }:
+
 {
   programs.git = {
     enable = true;
@@ -9,5 +10,6 @@
       };
  
       init.defaultBranch = "master";
+    };
   };
 }
