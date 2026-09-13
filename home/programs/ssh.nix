@@ -1,12 +1,21 @@
 { ... }:
+
 {
   programs.ssh = {
     enable = true;
-    addKeysToAgent = "yes";
-    matchBlocks.github = {
-      hostname = "github.com";
-      user = "git";
-      identityFile = "~/.ssh/id_25519_github";
+    enableDefaultConfig = false;
+    
+    settings = {
+      "*" = {
+        AddKeysToAgent = "yes";
+      };
+      
+      "github.com" = {
+        HostName = "github.com";
+        User = "git";
+        IdentityFile = "~/.ssh/id_ed25519_github";
+        IdentitiesOnly = true;
+      };
     };
   };
 }
