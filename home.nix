@@ -1,10 +1,7 @@
 { ... }:
 
 {
-  imports = [
-    ./home/programs
-    ./home/shell
-  ];
+  imports = [ ./home ];
 
   home.username = "kvm";
   home.homeDirectory = "/home/kvm";
