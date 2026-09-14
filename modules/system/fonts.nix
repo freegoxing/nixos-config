@@ -1,4 +1,4 @@
-{ pkg, ... }:
+{ pkgs, ... }:
 
 {
   fonts.packages = with pkgs; [
