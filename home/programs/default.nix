@@ -1,2 +1,10 @@
 { ... }:
-{ imports = [ ./git.nix ./packages.nix ./ssh.nix ./nvim.nix ]; }
+{
+  imports = [
+    ./git.nix
+    ./kitty.nix
+    ./packages.nix
+    ./ssh.nix
+    ./nvim.nix
+  ];
+}
