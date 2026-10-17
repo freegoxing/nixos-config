@@ -9,7 +9,7 @@
     
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "sudo" ];
+      plugins = [ "git" "sudo" "z"];
       theme = "";
     };
 
