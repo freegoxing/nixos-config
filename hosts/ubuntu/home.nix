@@ -1,11 +1,17 @@
 { pkgs, ... }:
 
 {
-  imports = [../../home/packages.nix];
+  imports = [
+    ../../home/packages.nix
+    ../../home/programs/kitty.nix
+  ];
 
   home.username = "free";
   home.homeDirectory = "/home/free";
   home.stateVersion = "26.05";
 
   programs.home-manager.enable = true;
+
+  targets.genericLinux.enable = true;
+
 }
