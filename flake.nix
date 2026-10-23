@@ -13,7 +13,7 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    homeConfigurations.ubuntu-cli = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.ubuntu = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules = [ ./hosts/ubuntu/home.nix ];
     };
