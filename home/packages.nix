@@ -9,6 +9,6 @@
     mdcat
     tokei
     typst
-    hexo
+    hexo-cli
     ]; 
 }
