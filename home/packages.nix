@@ -1,2 +1,14 @@
 { pkgs, ... }:
-{ home.packages = with pkgs; [ fastfetch which eza nix-output-monitor ]; }
+{ home.packages = with pkgs; [ 
+    fastfetch  
+    eza
+
+    uv
+    pnpm
+
+    mdcat
+    tokei
+    typst
+    hexo
+    ]; 
+}
