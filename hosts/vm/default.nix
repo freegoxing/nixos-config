@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/system.nix
+    ../../nixos
   ];
 
   services.spice-vdagentd.enable = true;

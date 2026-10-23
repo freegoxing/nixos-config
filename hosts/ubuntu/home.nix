@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ../../home/programs/packages.nix ];
+  imports = [ ../../home/packages.nix ];
 
   home.username = "free";
   home.homeDirectory = "/home/free";
