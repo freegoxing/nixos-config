@@ -13,6 +13,11 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+    homeConfigurations.ubuntu-cli = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      modules = [ ./hosts/ubuntu/home.nix ];
+    };
+
     # TODO 请将下面的 my-nixos 替换成你的 hostname
     nixosConfigurations.vm = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs;};
