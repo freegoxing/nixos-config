@@ -4,6 +4,7 @@
   imports = [
     ../../home/packages.nix
     ../../home/programs/kitty.nix
+    ../../home/programs/lutris.nix
   ];
 
   home.username = "free";
