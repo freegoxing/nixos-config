@@ -10,5 +10,14 @@
     tokei
     typst
     hexo-cli
+
+    # pdf
+    kdePackages.okular
+
+    ulauncher
+
+    mission-center
+
+    prismlauncher
     ]; 
 }
