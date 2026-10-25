@@ -5,5 +5,6 @@
     ./kitty.nix
     ./ssh.nix
     ./nvim.nix
+    ./zed.nix
   ];
 }
