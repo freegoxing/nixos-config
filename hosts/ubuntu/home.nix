@@ -5,6 +5,7 @@
     ../../home/packages.nix
     ../../home/programs/kitty.nix
     ../../home/programs/lutris.nix
+    ../../home/programs/jujutsu.nix
   ];
 
   home.username = "free";
