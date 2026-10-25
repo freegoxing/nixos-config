@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 
 {
   programs.neovim = {
@@ -29,7 +29,5 @@
   };
 
   # 将 Neovim 配置链接到 Git 仓库中的实际目录
-  xdg.configFile."nvim".source =
-    config.lib.file.mkOutOfStoreSymlink
-      "${config.home.homeDirectory}/Code/nix/nixos-config/dotfiles/nvim";
+  xdg.configFile."nvim".source = ../../dotfiles/nvim;
 }
