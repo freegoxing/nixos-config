@@ -3,6 +3,20 @@
     fastfetch  
     eza
 
+    # Rust toolchain
+    rustc
+    cargo
+    rustfmt
+    clippy
+    rust-analyzer
+
+    # Cargo tools
+    cargo-binstall
+    cargo-binutils
+
+    # Tauri
+    cargo-tauri
+
     uv
     pnpm
 
