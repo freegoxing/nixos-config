@@ -6,8 +6,8 @@
     enable = true;
     defaultEditor = false;
 
-    mutableUserSettings = true;
-    mutableUserKeymaps = true;
+    mutableUserSettings = false;
+    mutableUserKeymaps = false;
 
     # Zed 扩展
     # 扩展 ID 应以 Zed 扩展市场为准
