@@ -8,6 +8,7 @@
     ../../home/programs/jujutsu.nix
     ../../home/programs/nvim.nix
     ../../home/programs/zed.nix
+    ../../home/programs/texlive.nix
   ];
 
   home.username = "free";
