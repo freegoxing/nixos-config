@@ -28,6 +28,8 @@
     # pdf
     kdePackages.okular
 
+    texstudio
+
     ulauncher
 
     mission-center
