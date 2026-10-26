@@ -15,8 +15,11 @@
   home.homeDirectory = "/home/free";
   home.stateVersion = "26.05";
 
+  home.packages = with pkgs; [
+    jetbrains.pycharm
+  ];
+
   programs.home-manager.enable = true;
 
   targets.genericLinux.enable = true;
-
 }
