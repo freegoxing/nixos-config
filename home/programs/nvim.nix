@@ -29,5 +29,13 @@
   };
 
   # 将 Neovim 配置链接到 Git 仓库中的实际目录
-  xdg.configFile."nvim".source = ../../dotfiles/nvim;
+  xdg.configFile."nvim" = {
+    source = builtins.path {
+      path = ../../dotfiles/nvim;
+      name = "nvim-config";
+      filter = path: type:
+        builtins.baseNameOf path != "lazy-lock.json";
+    };
+    recursive = true;
+  };
 }
