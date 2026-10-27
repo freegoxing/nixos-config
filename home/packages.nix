@@ -39,5 +39,7 @@
     protonplus
 
     wechat
+
+    wpsoffice-cn
     ];
 }

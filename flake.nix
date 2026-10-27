@@ -21,6 +21,7 @@
               "pycharm"
               "nvidia-x11"
               "wechat"
+              "wpsoffice-cn"
             ];
 
           nvidia.acceptLicense = true;
