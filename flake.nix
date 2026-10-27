@@ -15,10 +15,15 @@
       pkgs = import nixpkgs {
         system = "x86_64-linux";
 
-        config.allowUnfreePredicate = pkg:
-          builtins.elem (nixpkgs.lib.getName pkg) [
-            "pycharm"
-          ];
+        config = {
+          allowUnfreePredicate = pkg:
+            builtins.elem (nixpkgs.lib.getName pkg) [
+              "pycharm"
+              "nvidia-x11"
+            ];
+
+          nvidia.acceptLicense = true;
+        };
       };
 
       modules = [

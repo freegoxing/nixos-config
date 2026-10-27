@@ -9,6 +9,9 @@
       mangohud
       gamemode
       umu-launcher
+
+      vulkan-tools
+      procps
     ];
 
     winePackages = with pkgs; [
