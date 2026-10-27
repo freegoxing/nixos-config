@@ -9,6 +9,13 @@
   # NixOS 动态链接兼容层
   programs.nix-ld.enable = true;
 
+  # 虚拟机桌面的中文输入法
+  i18n.inputMethod = {
+    enable = true;
+    type = "ibus";
+    ibus.engines = with pkgs.ibus-engines; [ libpinyin ];
+  };
+
   # 虚拟机专属 Neovim 依赖
   home-manager.users.kvm.programs.neovim.extraPackages =
     with pkgs; [
