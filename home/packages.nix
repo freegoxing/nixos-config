@@ -37,5 +37,7 @@
     prismlauncher
 
     protonplus
+
+    wechat
     ];
 }

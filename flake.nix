@@ -20,6 +20,7 @@
             builtins.elem (nixpkgs.lib.getName pkg) [
               "pycharm"
               "nvidia-x11"
+              "wechat"
             ];
 
           nvidia.acceptLicense = true;
