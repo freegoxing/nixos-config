@@ -6,5 +6,6 @@
     ./ssh.nix
     ./nvim.nix
     ./zed.nix
+    ./wechat.nix
   ];
 }

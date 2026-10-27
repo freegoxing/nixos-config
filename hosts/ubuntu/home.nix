@@ -9,6 +9,7 @@
     ../../home/programs/nvim.nix
     ../../home/programs/zed.nix
     ../../home/programs/texlive.nix
+    ../../home/programs/wechat.nix
   ];
 
   home.username = "free";
