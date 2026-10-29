@@ -39,5 +39,7 @@
     protonplus
 
     wpsoffice-cn
+
+    geogebra
     ];
 }

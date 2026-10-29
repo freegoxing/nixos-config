@@ -22,6 +22,7 @@
               "nvidia-x11"
               "wechat"
               "wpsoffice-cn"
+              "geogebra"
             ];
 
           nvidia.acceptLicense = true;
