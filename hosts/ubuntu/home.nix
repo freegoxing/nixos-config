@@ -10,6 +10,7 @@
     ../../home/programs/zed.nix
     ../../home/programs/texlive.nix
     ../../home/programs/wechat.nix
+    ../../home/programs/bottles.nix
   ];
 
   home.username = "free";
