@@ -19,6 +19,7 @@
 
     uv
     pnpm
+    cmake
 
     mdcat
     tokei
@@ -29,6 +30,9 @@
     kdePackages.okular
 
     texstudio
+
+    vlc
+    obs-studio
 
     ulauncher
 
