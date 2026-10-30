@@ -30,9 +30,11 @@
     kdePackages.okular
 
     texstudio
-
+   
+    # video
     vlc
     obs-studio
+    kdePackages.kdenlive
 
     ulauncher
 
@@ -45,5 +47,7 @@
     wpsoffice-cn
 
     geogebra
+
+    inkscape
     ];
 }
