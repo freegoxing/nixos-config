@@ -1,9 +1,38 @@
 { pkgs, ... }:
 
 let
+  # 为微信的 AppImage FHS 环境修复时区数据库
+  wechatFixed = pkgs.wechat.override {
+    callPackage =
+      path: args:
+      pkgs.callPackage path (
+        args
+        // {
+          appimageTools = pkgs.appimageTools // {
+            wrapAppImage =
+              params:
+              pkgs.appimageTools.wrapAppImage (
+                params
+                // {
+                  extraPkgs =
+                    p:
+                    (params.extraPkgs or (_: [ ])) p
+                    ++ [ p.tzdata.out ];
+
+                  profile = (params.profile or "") + ''
+                    export TZDIR="${pkgs.tzdata.out}/share/zoneinfo"
+                  '';
+                }
+              );
+          };
+        }
+      );
+  };
+
+  # IBus 输入法支持
   wechatWrapped = pkgs.symlinkJoin {
     name = "wechat-ibus";
-    paths = [ pkgs.wechat ];
+    paths = [ wechatFixed ];
 
     nativeBuildInputs = [ pkgs.makeWrapper ];
 
