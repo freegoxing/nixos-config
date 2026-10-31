@@ -7,6 +7,6 @@
     ./nvim.nix
     ./zed.nix
     ./wechat.nix
-    ./bottles.nix
+    ./obs.nix
   ];
 }
