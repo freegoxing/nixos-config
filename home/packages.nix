@@ -33,7 +33,6 @@
    
     # video
     vlc
-    obs-studio
     kdePackages.kdenlive
 
     ulauncher
@@ -49,5 +48,7 @@
     geogebra
 
     inkscape
+
+    thunderbird-esr
     ];
 }
