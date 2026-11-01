@@ -20,6 +20,10 @@
       pkgs = import nixpkgs {
         system = "x86_64-linux";
 
+        overlays = [
+          inputs.nur.overlays.default
+        ];
+
         config = {
           allowUnfreePredicate = pkg:
             builtins.elem (nixpkgs.lib.getName pkg) [
@@ -32,6 +36,7 @@
               "obsidian"
               "wemeet"
               "libwemeetwrap"
+              "baidunetdisk"
             ];
 
           nvidia.acceptLicense = true;

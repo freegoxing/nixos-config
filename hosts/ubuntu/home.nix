@@ -12,6 +12,7 @@
     ../../home/programs/wechat.nix
     ../../home/programs/bottles.nix
     ../../home/programs/obs.nix
+    ../../home/programs/baidunetdisk.nix
   ];
 
   home.username = "free";
