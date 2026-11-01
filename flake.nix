@@ -34,11 +34,11 @@
               "libwemeetwrap"
             ];
 
-          extraSpecialArgs = { inherit inputs;};
-
           nvidia.acceptLicense = true;
         };
       };
+
+      extraSpecialArgs = { inherit inputs;};
 
       modules = [
         ./hosts/ubuntu/home.nix
