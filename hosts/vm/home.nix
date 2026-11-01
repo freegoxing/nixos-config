@@ -1,7 +1,10 @@
 { ... }:
 
 {
-  imports = [ ../../home ];
+  imports = [
+    ../../home
+    ./shell.nix
+  ];
 
   home.username = "kvm";
   home.homeDirectory = "/home/kvm";

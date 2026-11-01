@@ -2,6 +2,8 @@
 
 {
   imports = [
+    ../../home/shell
+    ./shell.nix
     ../../home/packages.nix
     ../../home/programs/kitty.nix
     ../../home/programs/lutris.nix

@@ -4,9 +4,13 @@
     ls = "eza --icons -l";
     la = "eza --icons -al";
     tree = "eza --icons -T";
-    rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config#vm";
+    vi = "nvim";
     q = "exit";
+    home = "cd ~";
+    cls = "clear";
+    clc = "clear";
     ff = "fastfetch";
+    ifconfig = "ip a";
     j = "z";
   };
 }
