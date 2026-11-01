@@ -8,5 +8,6 @@
     ./zed.nix
     ./wechat.nix
     ./obs.nix
+    ./direnv.nix
   ];
 }

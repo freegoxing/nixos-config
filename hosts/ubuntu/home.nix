@@ -13,6 +13,7 @@
     ../../home/programs/bottles.nix
     ../../home/programs/obs.nix
     ../../home/programs/baidunetdisk.nix
+    ../../home/programs/direnv.nix
   ];
 
   home.username = "free";
