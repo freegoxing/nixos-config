@@ -7,6 +7,5 @@
     kssh = "kitty +kitten ssh";
     knotify = "kitten notify";
     zed = "zeditor";
-    pdfocr = "ocrmypdf -l chi_sim+eng --deskew --jobs 15";
   };
 }
