@@ -27,6 +27,25 @@ sudo nixos-rebuild switch --flake .#vm
 
 虚拟机入口在 `hosts/vm/default.nix`，同时加载 `nixos/` 下的系统模块和 `hosts/vm/home.nix` 中的 Home Manager 配置。首次用于另一台虚拟机前，应核对 `hosts/vm/hardware-configuration.nix` 中的文件系统和设备信息。
 
+## 开发检查
+
+安装并在 Shell 中启用 direnv 和 nix-direnv，然后在仓库根目录执行一次：
+
+```sh
+direnv allow
+```
+
+进入目录时开发环境会自动加载，并安装 Git 的 pre-commit Hook。提交时检查暂存文件；格式化或自动修复修改文件后，请检查并重新暂存，再次提交。不使用 direnv 时，可运行 `nix develop` 进入开发环境并安装 Hook。
+
+```sh
+pre-commit run --all-files  # 检查所有受支持的已跟踪文件
+nix fmt                     # 格式化 Nix 和 Shell 文件
+nix flake check             # 运行 flake 检查
+```
+
+首次运行可能需要下载 Nix 依赖。Git Hook 检查不包含冲突标记检查。
+开发环境中还提供 `statix` 和 `deadnix`，可手动运行；它们暂不阻止提交。现有文件可能需要先运行格式化和修复文件结尾，才能通过全仓检查。
+
 ## 目录
 
 | 路径 | 内容 |
