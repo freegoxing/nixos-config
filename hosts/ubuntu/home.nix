@@ -20,6 +20,7 @@
 
   home.packages = with pkgs; [
     jetbrains.pycharm
+    wemeet
   ];
 
   programs.home-manager.enable = true;

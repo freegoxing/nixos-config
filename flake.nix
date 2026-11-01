@@ -25,6 +25,8 @@
               "geogebra"
               "google-chrome"
               "obsidian"
+              "wemeet"
+              "libwemeetwrap"
             ];
 
           nvidia.acceptLicense = true;
