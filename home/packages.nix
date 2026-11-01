@@ -31,6 +31,8 @@
 
     texstudio
    
+    obsidian
+
     # video
     vlc
     kdePackages.kdenlive
@@ -50,5 +52,7 @@
     inkscape
 
     thunderbird-esr
+
+    google-chrome
     ];
 }

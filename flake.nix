@@ -23,6 +23,8 @@
               "wechat"
               "wpsoffice-cn"
               "geogebra"
+              "google-chrome"
+              "obsidian"
             ];
 
           nvidia.acceptLicense = true;
