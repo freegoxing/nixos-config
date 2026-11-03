@@ -36,8 +36,7 @@
             bottles/backend/repos/repo.py
         '';
 
-        nativeBuildInputs =
-          (old.nativeBuildInputs or []) ++ [ final.python3 ];
+        nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ final.python3 ];
       });
     })
   ];
@@ -45,6 +44,11 @@
   home.packages = [
     (pkgs.bottles.override {
       removeWarningPopup = true;
+
+      extraPkgs =
+        pkgs': with pkgs'; [
+          nautilus
+        ];
     })
   ];
 }
