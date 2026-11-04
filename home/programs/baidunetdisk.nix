@@ -1,5 +1,5 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
-  home.packages = [ (pkgs.callPackage ../../pkgs/baidunetdisk/package.nix { inherit pkgs; }) ];
+  home.packages = [ (import inputs.nur { inherit pkgs; }).baidunetdisk ];
 }

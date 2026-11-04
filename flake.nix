@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 
     nur = {
-      url = "github:nix-community/NUR";
+      url = "github:freegoxing/nur-packages";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -57,10 +57,6 @@
       homeConfigurations.ubuntu = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "x86_64-linux";
-
-          overlays = [
-            inputs.nur.overlays.default
-          ];
 
           config = {
             allowUnfreePredicate =
