@@ -1,6 +1,7 @@
 { pkgs, ... }:
-{ home.packages = with pkgs; [ 
-    fastfetch  
+{
+  home.packages = with pkgs; [
+    fastfetch
     eza
 
     # Rust toolchain
@@ -30,7 +31,7 @@
     kdePackages.okular
 
     texstudio
-   
+
     obsidian
 
     # video
@@ -54,5 +55,7 @@
     thunderbird-esr
 
     google-chrome
-    ];
+
+    pdfarranger
+  ];
 }
