@@ -25,6 +25,15 @@
   home.packages = with pkgs; [
     jetbrains.pycharm
     wemeet
+
+    (nomachine-client.overrideAttrs (_: {
+      version = "10.2.3";
+
+      src = fetchurl {
+        url = "https://web9001.nomachine.com/download/10.2/Linux/nomachine-player_10.2.3_1_x86_64.tar.gz";
+        hash = "sha256-JOg97ElcbLM6uc6DCAwfGnoytsEgY/BSFmmdIE4oC1o=";
+      };
+    }))
   ];
 
   programs.home-manager.enable = true;

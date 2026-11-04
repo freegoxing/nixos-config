@@ -76,6 +76,7 @@
                 "wemeet"
                 "libwemeetwrap"
                 "baidunetdisk"
+                "nomachine-client"
               ];
 
             nvidia.acceptLicense = true;
