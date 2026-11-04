@@ -52,6 +52,8 @@
 
     inkscape
 
+    drawio
+
     thunderbird-esr
 
     google-chrome
