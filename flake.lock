@@ -87,11 +87,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793798993,
-        "narHash": "sha256-NE7YizRv6EQXqdn2w+rL91LBkC8BvxK0ZGdVESQccYA=",
+        "lastModified": 1793866613,
+        "narHash": "sha256-DGfV8vmKAjxtXM92IYgEjXpHqdfH/3jFQhLPVI4JPIA=",
         "owner": "freegoxing",
         "repo": "nur-packages",
-        "rev": "ed80f07f34e01b69c4f23dc73a7e66082dbda740",
+        "rev": "a2f8f9472179d5de5b6719931dcec185943aaaf5",
         "type": "github"
       },
       "original": {

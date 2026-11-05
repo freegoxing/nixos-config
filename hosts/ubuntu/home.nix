@@ -15,6 +15,7 @@
     ../../home/programs/bottles.nix
     ../../home/programs/obs.nix
     ../../home/programs/baidunetdisk.nix
+    ../../home/programs/lceda-pro.nix
     ../../home/programs/direnv.nix
   ];
 

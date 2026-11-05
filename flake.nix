@@ -76,6 +76,7 @@
                 "wemeet"
                 "libwemeetwrap"
                 "baidunetdisk"
+                "lceda-pro"
                 "nomachine-client"
               ];
 
