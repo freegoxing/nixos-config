@@ -34,6 +34,8 @@
         hash = "sha256-JOg97ElcbLM6uc6DCAwfGnoytsEgY/BSFmmdIE4oC1o=";
       };
     }))
+
+    iio-oscilloscope
   ];
 
   programs.home-manager.enable = true;
