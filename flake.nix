@@ -6,7 +6,11 @@
 
     nur = {
       url = "github:freegoxing/nur-packages";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        git-hooks.follows = "git-hooks";
+        treefmt-nix.follows = "treefmt-nix";
+      };
     };
 
     home-manager = {

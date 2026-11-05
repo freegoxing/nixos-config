@@ -76,16 +76,22 @@
     },
     "nur": {
       "inputs": {
+        "git-hooks": [
+          "git-hooks"
+        ],
         "nixpkgs": [
           "nixpkgs"
+        ],
+        "treefmt-nix": [
+          "treefmt-nix"
         ]
       },
       "locked": {
-        "lastModified": 1793794788,
-        "narHash": "sha256-o7TJeI0NA2Ld6Mx4XMisOruFHvP++VD8Q/I/3xmvAgY=",
+        "lastModified": 1793798993,
+        "narHash": "sha256-NE7YizRv6EQXqdn2w+rL91LBkC8BvxK0ZGdVESQccYA=",
         "owner": "freegoxing",
         "repo": "nur-packages",
-        "rev": "f09e2010e620e1d4a777769cd385bf6a54c488d8",
+        "rev": "ed80f07f34e01b69c4f23dc73a7e66082dbda740",
         "type": "github"
       },
       "original": {
