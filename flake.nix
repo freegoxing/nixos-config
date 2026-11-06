@@ -77,7 +77,9 @@
                 "libwemeetwrap"
                 "baidunetdisk"
                 "lceda-pro"
+                "qq"
                 "nomachine-client"
+                "bilibili"
               ];
 
             nvidia.acceptLicense = true;

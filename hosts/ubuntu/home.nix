@@ -16,6 +16,7 @@
     ../../home/programs/obs.nix
     ../../home/programs/baidunetdisk.nix
     ../../home/programs/lceda-pro.nix
+    ../../home/programs/qq.nix
     ../../home/programs/direnv.nix
   ];
 
@@ -37,6 +38,7 @@
     }))
 
     iio-oscilloscope
+    bilibili
   ];
 
   programs.home-manager.enable = true;
