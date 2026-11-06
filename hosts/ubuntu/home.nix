@@ -1,6 +1,29 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
+  nixpkgs.config = {
+    allowUnfreePredicate =
+      pkg:
+      builtins.elem (lib.getName pkg) [
+        "pycharm"
+        "nvidia-x11"
+        "wechat"
+        "wpsoffice-cn"
+        "geogebra"
+        "google-chrome"
+        "obsidian"
+        "wemeet"
+        "libwemeetwrap"
+        "baidunetdisk"
+        "lceda-pro"
+        "qq"
+        "nomachine-client"
+        "bilibili"
+      ];
+
+    nvidia.acceptLicense = true;
+  };
+
   imports = [
     ../../home/shell
     ./shell.nix

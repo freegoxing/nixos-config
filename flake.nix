@@ -59,32 +59,7 @@
       };
 
       homeConfigurations.ubuntu = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
-          system = "x86_64-linux";
-
-          config = {
-            allowUnfreePredicate =
-              pkg:
-              builtins.elem (nixpkgs.lib.getName pkg) [
-                "pycharm"
-                "nvidia-x11"
-                "wechat"
-                "wpsoffice-cn"
-                "geogebra"
-                "google-chrome"
-                "obsidian"
-                "wemeet"
-                "libwemeetwrap"
-                "baidunetdisk"
-                "lceda-pro"
-                "qq"
-                "nomachine-client"
-                "bilibili"
-              ];
-
-            nvidia.acceptLicense = true;
-          };
-        };
+        pkgs = nixpkgs.legacyPackages.${system};
 
         extraSpecialArgs = { inherit inputs; };
 
