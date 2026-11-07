@@ -62,6 +62,7 @@
 
     iio-oscilloscope
     bilibili
+    picgo
   ];
 
   programs.home-manager.enable = true;

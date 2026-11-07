@@ -28,7 +28,7 @@
     tokei
     typst
     hexo-cli
-
+    gh
     # pdf
     kdePackages.okular
 
