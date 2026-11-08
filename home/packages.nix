@@ -23,6 +23,7 @@
     uv
     pnpm
     cmake
+    jq
 
     mdcat
     tokei
@@ -33,6 +34,8 @@
     kdePackages.okular
 
     texstudio
+
+    pdfarranger
 
     obsidian
 
@@ -60,6 +63,7 @@
 
     google-chrome
 
-    pdfarranger
+    remmina
+    filezilla
   ];
 }
