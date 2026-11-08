@@ -51,6 +51,27 @@ in
       systemctl --user stop ssh-proxy
     }
 
+    apt-size() {
+      local packages
+      packages=$(LC_ALL=C apt-get -s autoremove --purge "$@" 2>/dev/null |
+        awk '$1 == "Remv" || $1 == "Purg" {print $2}')
+
+      if [[ -z "$packages" ]]; then
+        echo "没有需要卸载的软件包"
+        return
+      fi
+
+      print -r -- "$packages" |
+        xargs -r dpkg-query -W -f=${lib.escapeShellArg "\${Package}\\t\${Installed-Size}\\n"} 2>/dev/null |
+        awk '{
+          sum += $2
+          printf "%-35s %8.2f MiB\n", $1, $2 / 1024
+        }
+        END {
+          printf "\n预计释放空间：%.2f MiB\n", sum / 1024
+        }'
+    }
+
     # Preserve the original ordering: local and STM32 paths precede defaults,
     # while MATLAB, ModelSim, Verible, and Quartus follow the existing PATH.
     export PATH="${homeDir}/.local/bin:$PATH"
