@@ -12,6 +12,7 @@
       extraPkgs =
         pkgs': with pkgs'; [
           nautilus
+          file
         ];
     })
   ];
