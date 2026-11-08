@@ -22,6 +22,8 @@
         "sudo"
         "z"
         "extract"
+        "colored-man-pages"
+        "aliases"
       ];
       theme = "";
       extraConfig = ''
@@ -31,17 +33,24 @@
       '';
     };
 
-    initContent = lib.mkBefore ''
-      if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
-        source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
-      fi
+    initContent = lib.mkMerge [
+      (lib.mkOrder 500 ''
+        if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
+          source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
+        fi
+      '')
 
-      if [[ -d "$HOME/.nix-profile/share/zsh/site-functions" ]]; then
-        fpath=("$HOME/.nix-profile/share/zsh/site-functions" $fpath)
-      fi
+      (lib.mkOrder 550 ''
+        if [[ -d "$HOME/.nix-profile/share/zsh/site-functions" ]]; then
+          fpath=("$HOME/.nix-profile/share/zsh/site-functions" $fpath)
+        fi
+      '')
 
-      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      [[ -r "$HOME/.p10k.zsh" ]] && source "$HOME/.p10k.zsh"
-    '';
+      (lib.mkOrder 1100 ''
+        source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+        [[ -r "$HOME/.p10k.zsh" ]] && source "$HOME/.p10k.zsh"
+      '')
+    ];
+
   };
 }
