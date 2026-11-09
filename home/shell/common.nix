@@ -12,5 +12,6 @@
     ff = "fastfetch";
     ifconfig = "ip a";
     j = "z";
+    cat = "bat";
   };
 }

@@ -5,13 +5,9 @@ let
 in
 {
   programs.zsh.shellAliases = {
-    # Ubuntu's package names differ from the usual NixOS command names.
-    cat = "batcat";
-    fd = "fdfind";
-
     hms = "home-manager switch --flake ~/Code/nix/nixos-config#ubuntu";
     sysup = ''echo "=== APT Update ===" && sudo apt update && echo "=== APT Upgrade ===" && sudo apt upgrade && echo "=== Nix update ===" && hms'';
-    sysclean = ''echo "=== APT Clean ===" && sudo apt autoremove --purge && echo "=== Nix clean" && nix-collect-garbage'';
+    sysclean = ''echo "=== APT Clean ===" && sudo apt autoremove --purge && echo "=== Nix clean ===" && nix-collect-garbage'';
 
     wstart = "waydroid session start";
     wstop = "waydroid session stop";

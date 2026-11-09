@@ -24,6 +24,8 @@
     pnpm
     cmake
     jq
+    fd
+    bat
 
     mdcat
     tokei
