@@ -1,10 +1,23 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    # Nix
     cachix
 
+    # CLI utilities
     fastfetch
     eza
+    fd
+    bat
+    jq
+    tokei
+    mdcat
+
+    # Development tools
+    cmake
+    uv
+    pnpm
+    gh
 
     # Rust toolchain
     rustc
@@ -17,55 +30,38 @@
     cargo-binstall
     cargo-binutils
 
-    # Tauri
-    cargo-tauri
-
-    uv
-    pnpm
-    cmake
-    jq
-    fd
-    bat
-
-    mdcat
-    tokei
+    # Documentation & publishing
     typst
-    hexo-cli
-    gh
-    # pdf
-    kdePackages.okular
-
     texstudio
+    obsidian
+    hexo-cli
 
+    # Office & PDF
+    wpsoffice-cn
+    kdePackages.okular
     pdfarranger
 
-    obsidian
+    # Graphics & science
+    inkscape
+    drawio
+    geogebra
 
-    # video
+    # Multimedia
     vlc
     kdePackages.kdenlive
 
-    ulauncher
+    # Internet & communication
+    google-chrome
+    thunderbird-esr
+    filezilla
+    remmina
 
+    # Desktop utilities
+    ulauncher
     mission-center
 
+    # Gaming
     prismlauncher
-
     protonplus
-
-    wpsoffice-cn
-
-    geogebra
-
-    inkscape
-
-    drawio
-
-    thunderbird-esr
-
-    google-chrome
-
-    remmina
-    filezilla
   ];
 }
