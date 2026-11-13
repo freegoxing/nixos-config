@@ -6,6 +6,8 @@
     ../../nixos
   ];
 
+  nixpkgs.overlays = [ (import ../../overlays/vscode.nix) ];
+
   # NixOS 动态链接兼容层
   programs.nix-ld.enable = true;
 
@@ -17,16 +19,15 @@
   };
 
   # 虚拟机专属 Neovim 依赖
-  home-manager.users.kvm.programs.neovim.extraPackages =
-    with pkgs; [
-      gcc
-      gnumake
-      pkg-config
-      tree-sitter
-      ripgrep
-      fd
-      unzip
-    ];
+  home-manager.users.kvm.programs.neovim.extraPackages = with pkgs; [
+    gcc
+    gnumake
+    pkg-config
+    tree-sitter
+    ripgrep
+    fd
+    unzip
+  ];
 
   # SPICE 虚拟机集成
   services.spice-vdagentd.enable = true;
@@ -43,4 +44,3 @@
     };
   };
 }
-

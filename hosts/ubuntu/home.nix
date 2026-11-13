@@ -1,6 +1,8 @@
 { lib, pkgs, ... }:
 
 {
+  nixpkgs.overlays = [ (import ../../overlays/vscode.nix) ];
+
   nixpkgs.config = {
     allowUnfreePredicate =
       pkg:
@@ -19,6 +21,7 @@
         "qq"
         "nomachine-client"
         "bilibili"
+        "vscode"
       ];
 
     nvidia.acceptLicense = true;

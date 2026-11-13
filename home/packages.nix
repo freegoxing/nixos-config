@@ -18,6 +18,7 @@
     uv
     pnpm
     gh
+    vscode
 
     # Rust toolchain
     rustc
