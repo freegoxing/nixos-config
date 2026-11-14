@@ -1,8 +1,6 @@
 { lib, pkgs, ... }:
 
 {
-  nixpkgs.overlays = [ (import ../../overlays/vscode.nix) ];
-
   nixpkgs.config = {
     allowUnfreePredicate =
       pkg:

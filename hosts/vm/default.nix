@@ -6,8 +6,6 @@
     ../../nixos
   ];
 
-  nixpkgs.overlays = [ (import ../../overlays/vscode.nix) ];
-
   # NixOS 动态链接兼容层
   programs.nix-ld.enable = true;
 
