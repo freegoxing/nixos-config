@@ -3,7 +3,7 @@
   imports = [
     ./git.nix
     ./kitty.nix
-    ./ssh.nix
+    ./ssh
     ./nvim.nix
     ./zed.nix
     ./wechat.nix

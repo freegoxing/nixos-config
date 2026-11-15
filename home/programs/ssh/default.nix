@@ -1,15 +1,19 @@
 { ... }:
 
 {
+  imports = [
+    ./public.nix
+  ];
+
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    
+
     settings = {
       "*" = {
         AddKeysToAgent = "yes";
       };
-      
+
       "github.com" = {
         HostName = "github.com";
         User = "git";

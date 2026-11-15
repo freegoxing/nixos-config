@@ -28,6 +28,7 @@
   imports = [
     ../../home/shell
     ./shell.nix
+    ./ssh.nix
     ../../home/packages.nix
     ../../home/programs/kitty.nix
     ../../home/programs/lutris.nix
@@ -43,6 +44,7 @@
     ../../home/programs/qq.nix
     ../../home/programs/direnv.nix
     ../../home/programs/git.nix
+    ../../home/programs/ssh
   ];
 
   home.username = "free";
@@ -69,6 +71,9 @@
   ];
 
   programs.home-manager.enable = true;
+
+  programs.ssh.package = pkgs.openssh;
+  services.ssh-agent.enable = true;
 
   targets.genericLinux.enable = true;
 
