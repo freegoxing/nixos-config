@@ -20,6 +20,9 @@
     gh
     vscode
 
+    # virtual manager
+    virt-manager
+
     # Rust toolchain
     rustc
     cargo
