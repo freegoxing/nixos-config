@@ -13,5 +13,6 @@
     ifconfig = "ip a";
     j = "z";
     cat = "bat";
+    diff = "delta";
   };
 }
