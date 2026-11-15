@@ -42,6 +42,7 @@
     ../../home/programs/lceda-pro.nix
     ../../home/programs/qq.nix
     ../../home/programs/direnv.nix
+    ../../home/programs/git.nix
   ];
 
   home.username = "free";
