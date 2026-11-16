@@ -1,5 +1,13 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
+let
+  nur = import inputs.nur { inherit pkgs; };
+in
 {
   nixpkgs.config = {
     allowUnfreePredicate =
@@ -17,6 +25,7 @@
         "baidunetdisk"
         "lceda-pro"
         "qq"
+        "z-library"
         "nomachine-client"
         "bilibili"
         "vscode"
@@ -39,9 +48,6 @@
     ../../home/programs/wechat.nix
     ../../home/programs/bottles.nix
     ../../home/programs/obs.nix
-    ../../home/programs/baidunetdisk.nix
-    ../../home/programs/lceda-pro.nix
-    ../../home/programs/qq.nix
     ../../home/programs/direnv.nix
     ../../home/programs/git.nix
     ../../home/programs/ssh
@@ -52,6 +58,12 @@
   home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
+    nur.baidunetdisk
+    nur.lceda-pro
+    nur.qq
+    nur.z-library
+    nur.equation-exporter
+
     cargo-tauri
     jetbrains.pycharm
     wemeet

@@ -67,5 +67,7 @@
     # Gaming
     prismlauncher
     protonplus
+
+    peazip
   ];
 }
