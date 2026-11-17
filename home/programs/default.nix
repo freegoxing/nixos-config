@@ -6,7 +6,6 @@
     ./ssh
     ./nvim.nix
     ./zed.nix
-    ./wechat.nix
     ./obs.nix
     ./direnv.nix
   ];

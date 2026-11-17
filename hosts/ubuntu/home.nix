@@ -45,7 +45,6 @@ in
     ../../home/programs/nvim.nix
     ../../home/programs/zed.nix
     ../../home/programs/texlive.nix
-    ../../home/programs/wechat.nix
     ../../home/programs/bottles.nix
     ../../home/programs/obs.nix
     ../../home/programs/direnv.nix
@@ -60,13 +59,10 @@ in
   home.packages = with pkgs; [
     nur.baidunetdisk
     nur.lceda-pro
-    nur.qq
     nur.z-library
     nur.equation-exporter
 
     cargo-tauri
-    jetbrains.pycharm
-    wemeet
 
     (nomachine-client.overrideAttrs (_: {
       version = "10.2.3";
@@ -77,7 +73,6 @@ in
       };
     }))
 
-    iio-oscilloscope
     bilibili
     picgo
   ];
