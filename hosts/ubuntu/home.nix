@@ -29,6 +29,7 @@ in
         "nomachine-client"
         "bilibili"
         "vscode"
+        "chatgpt"
       ];
 
     nvidia.acceptLicense = true;
@@ -75,6 +76,7 @@ in
 
     bilibili
     picgo
+    chatgpt
   ];
 
   programs.home-manager.enable = true;
