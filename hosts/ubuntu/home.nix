@@ -90,6 +90,8 @@ in
 
   targets.genericLinux.enable = true;
 
+  dconf.settings."org/gnome/desktop/wm/preferences".button-layout = ":minimize,maximize,close";
+
   # Ubuntu requests this sound module through its GTK desktop settings. Make
   # the Nix-built module discoverable by GTK 3 applications across the session.
   home.sessionSearchVariables.GTK_PATH = [
