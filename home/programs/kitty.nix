@@ -48,6 +48,8 @@
 
     mouseBindings = {
       "ctrl+left release grabbed,ungrabbed" = "mouse_click_url";
+      "ctrl+wheel_up press ungrabbed,grabbed" = "change_font_size all +2";
+      "ctrl+wheel_down press ungrabbed,grabbed" = "change_font_size all -2";
     };
 
     # Preserve the behavior of the original kitty.conf, which did not
