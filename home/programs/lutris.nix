@@ -1,15 +1,30 @@
 { pkgs, ... }:
 
+let
+  lutrisPkgs = pkgs.extend (
+    _final: prev: {
+      gamemode = prev.gamemode.overrideAttrs (old: {
+        postFixup = (old.postFixup or "") + ''
+          # UMU's Steam runtime can replace LD_LIBRARY_PATH before launching games.
+          patchelf --add-rpath "$lib/lib" "$(readlink -f "$lib/lib/libgamemodeauto.so.0")"
+        '';
+      });
+    }
+  );
+in
 {
   programs.lutris = {
     enable = true;
 
-    package = pkgs.lutris.override {
+    package = lutrisPkgs.lutris.override {
       buildFHSEnv =
         args:
-        pkgs.buildFHSEnv (
+        lutrisPkgs.buildFHSEnv (
           args
           // {
+            # Make the GameMode client available to both 32-bit and 64-bit games.
+            multiPkgs = runtimePkgs: args.multiPkgs runtimePkgs ++ [ runtimePkgs.gamemode.lib ];
+
             # Non-NixOS hosts may lack /etc/zoneinfo, which UMU's nested
             # Steam runtime requires as a bind-mount source.
             extraBwrapArgs = (args.extraBwrapArgs or [ ]) ++ [
@@ -25,7 +40,7 @@
     extraPackages = with pkgs; [
       winetricks
       mangohud
-      gamemode
+      lutrisPkgs.gamemode
       umu-launcher
       tzdata
 
