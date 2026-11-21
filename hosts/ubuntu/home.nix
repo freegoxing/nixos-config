@@ -40,6 +40,7 @@ in
   };
 
   imports = [
+    ../../home/desktop/gnome
     ../../home/shell
     ./shell.nix
     ./ssh.nix
@@ -90,8 +91,6 @@ in
   services.ssh-agent.enable = true;
 
   targets.genericLinux.enable = true;
-
-  dconf.settings."org/gnome/desktop/wm/preferences".button-layout = ":minimize,maximize,close";
 
   # Ubuntu requests this sound module through its GTK desktop settings. Make
   # the Nix-built module discoverable by GTK 3 applications across the session.
