@@ -29,7 +29,7 @@ in
         "baidunetdisk"
         "lceda-pro"
         "qq"
-        "z-library"
+        "z-library-desktop"
         "nomachine-client"
         "bilibili"
         "vscode"
@@ -64,8 +64,8 @@ in
   home.packages = with pkgs; [
     nur.baidunetdisk
     nur.lceda-pro
-    nur.z-library
     nur.equation-exporter
+    z-library-desktop
 
     cargo-tauri
 
@@ -81,6 +81,7 @@ in
     bilibili
     picgo
     chatgpt
+    cutecom
   ];
 
   programs.home-manager.enable = true;
