@@ -34,6 +34,7 @@ in
         "bilibili"
         "vscode"
         "chatgpt"
+        "chatgpt-primary-runtime"
       ];
 
     nvidia.acceptLicense = true;
