@@ -4,6 +4,8 @@
     flat-remix-gtk
     flat-remix-icon-theme
     bibata-cursors
+
+    gnome-tweaks
   ];
 
   dconf.settings."org/gnome/desktop/interface" = {
@@ -11,5 +13,7 @@
     icon-theme = "Flat-Remix-Blue-Dark";
     cursor-theme = "Bibata-Modern-Ice";
     cursor-size = 24;
+
+    color-scheme = "prefer-dark";
   };
 }
