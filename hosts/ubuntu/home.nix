@@ -40,6 +40,10 @@ in
     nvidia.acceptLicense = true;
   };
 
+  nixpkgs.overlays = [
+    (import ../../overlays/chatgpt.nix)
+  ];
+
   imports = [
     ../../home/desktop/gnome
     ../../home/shell
