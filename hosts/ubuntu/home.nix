@@ -42,6 +42,7 @@ in
 
   nixpkgs.overlays = [
     (import ../../overlays/chatgpt.nix)
+    (import ../../overlays/krop.nix)
   ];
 
   imports = [
@@ -88,6 +89,7 @@ in
     picgo
     chatgpt
     cutecom
+    krop
   ];
 
   programs.home-manager.enable = true;
