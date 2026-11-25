@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+  theme = import ../theme.nix;
+in
 {
   home.packages = with pkgs; [
     flat-remix-gtk
@@ -9,11 +12,11 @@
   ];
 
   dconf.settings."org/gnome/desktop/interface" = {
-    gtk-theme = "Flat-Remix-GTK-Blue-Dark";
-    icon-theme = "Flat-Remix-Blue-Dark";
-    cursor-theme = "Bibata-Modern-Ice";
-    cursor-size = 24;
+    gtk-theme = theme.gtkTheme;
+    icon-theme = theme.iconTheme;
+    cursor-theme = theme.cursorTheme;
+    cursor-size = theme.cursorSize;
 
-    color-scheme = "prefer-dark";
+    color-scheme = theme.colorScheme;
   };
 }

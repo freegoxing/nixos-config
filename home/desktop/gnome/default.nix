@@ -2,6 +2,7 @@
   imports = [
     ./appearance.nix
     ./extensions.nix
+    ../qt.nix
   ];
 
   dconf.enable = true;
