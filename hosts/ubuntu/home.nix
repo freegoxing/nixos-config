@@ -87,6 +87,7 @@ in
     chatgpt
     cutecom
     krop
+    nvd
   ];
 
   programs.home-manager.enable = true;

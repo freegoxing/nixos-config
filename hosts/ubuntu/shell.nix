@@ -6,7 +6,9 @@ in
 {
   programs.zsh.shellAliases = {
     hms = "home-manager switch --flake ~/Code/nix/nixos-config#ubuntu";
-    sysup = ''echo "=== APT Update ===" && sudo apt update && echo "=== APT Upgrade ===" && sudo apt upgrade && echo "=== Nix update ===" && hms'';
+    hmg = "home-manager generations";
+
+    sysup = ''echo "=== APT Update ===" && sudo apt update && echo "=== APT Upgrade ===" && sudo apt upgrade && echo "=== Nix update ===" && hmu'';
     sysclean = ''echo "=== APT Clean ===" && sudo apt autoremove --purge && echo "=== Nix clean ===" && nix-collect-garbage'';
 
     wstart = "waydroid session start";
@@ -66,6 +68,40 @@ in
         END {
           printf "\n预计释放空间：%.2f MiB\n", sum / 1024
         }'
+    }
+
+    function hm-current() {
+      home-manager generations \
+        | grep -F '(current)' \
+        | grep -oE '/nix/store/[^[:space:]]+' \
+        | head -n 1
+    }
+
+    function hmu() {
+      local repo="$HOME/Code/nix/nixos-config"
+      local old_gen new_gen
+
+      old_gen=$(hm-current)
+
+      printf '\n\033[1;36m=== Nix update ===\033[0m\n'
+      nix flake update --flake "$repo" || return $?
+
+      printf '\n\033[1;36m=== Home Manager activation ===\033[0m\n'
+      home-manager switch --flake "$repo#ubuntu" "$@" || return $?
+
+      new_gen=$(hm-current)
+
+      printf '\n\033[1;36m=== Package changes ===\033[0m\n'
+
+      if [[ -z "$old_gen" || -z "$new_gen" ]]; then
+        echo "Unable to identify both generations."
+      elif [[ "$old_gen" == "$new_gen" ]]; then
+        echo "No generation changes."
+      else
+        nvd diff "$old_gen" "$new_gen" || return $?
+      fi
+
+      printf '\n\033[1;32m=== Update completed ===\033[0m\n'
     }
 
     # Preserve the original ordering: local and STM32 paths precede defaults,
