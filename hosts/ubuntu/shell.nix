@@ -8,7 +8,7 @@ in
     hms = "home-manager switch --flake ~/Code/nix/nixos-config#ubuntu";
     hmg = "home-manager generations";
 
-    sysup = ''echo "=== APT Update ===" && sudo apt update && echo "=== APT Upgrade ===" && sudo apt upgrade && echo "=== Nix update ===" && hmu'';
+    sysup = ''echo "=== APT Update ===" && sudo apt update && echo "=== APT Upgrade ===" && sudo apt upgrade && hmu'';
     sysclean = ''echo "=== APT Clean ===" && sudo apt autoremove --purge && echo "=== Nix clean ===" && nix-collect-garbage'';
 
     wstart = "waydroid session start";
