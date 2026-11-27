@@ -39,6 +39,7 @@ in
   nixpkgs.overlays = [
     (import ../../overlays/chatgpt.nix)
     (import ../../overlays/krop.nix)
+    (import ../../overlays/cutecom.nix)
   ];
 
   imports = [
