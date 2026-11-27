@@ -42,6 +42,7 @@
       treefmt = inputs.treefmt-nix.lib.evalModule pkgs ./nix/treefmt.nix;
       pre-commit-check = inputs.git-hooks.lib.${system}.run {
         src = ./.;
+        package = pkgs.prek;
         hooks = import ./nix/git-hooks.nix { inherit treefmt; };
       };
     in
@@ -51,7 +52,6 @@
       devShells.${system}.default = pkgs.mkShellNoCC {
         inherit (pre-commit-check) shellHook;
         packages = pre-commit-check.enabledPackages ++ [
-          pkgs.pre-commit
           treefmt.config.build.wrapper
           pkgs.statix
           pkgs.deadnix
