@@ -72,5 +72,7 @@
 
     wechat
     qq
+
+    gparted-full
   ];
 }
