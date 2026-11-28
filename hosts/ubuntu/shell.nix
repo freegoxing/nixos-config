@@ -98,7 +98,7 @@ in
       elif [[ "$old_gen" == "$new_gen" ]]; then
         echo "No generation changes."
       else
-        nvd diff "$old_gen" "$new_gen" || return $?
+        nvd diff "$old_gen/home-path" "$new_gen/home-path" || return $?
       fi
 
       printf '\n\033[1;32m=== Update completed ===\033[0m\n'
